@@ -2,16 +2,20 @@
     {
         "employe": "Vous sentez-vous envahi ?",
         "manager": "Avez vous l'impression que votre employé ne met pas de barrière entre vous et lui ?",
-        "more": "L'employé.e souhaite plus de liberté",
-        "less": "Le manager est plus soucieux d'empiéter sur ses employés."
+        "more": "L'employé.e a besoin de plus de liberté, tandis que le manager se sent repoussé et a un besoin de plus de compréhension. La stratégie semble ici d'apopter une meilleure communication",
+        "less": "Le manager est soucieux de la vie privée de son employé."
     },
     {
         "employe": "Vous sentez-vous contraint sur l'organisation de vos horaires ?",
-        "manager": "Sentez-vous que les horaires définis sont contraignantes ?"
+        "manager": "Sentez-vous que les horaires définis sont contraignantes ?",
+        "more": "L'employé.e a besoin d'autonomie tandis que le manager ressent un besoin de sécurité et de confiance dans la disponibilité",
+        "less": "Le manager est soucieux de la charge de travail de son employé et l'employé lui se sent autonome."
     },
     {
         "employe": "Vous sentez-vous ennuyé ?",
-        "manager": "Votre employé ne fournit-il pas des efforts suffisants ?"
+        "manager": "Votre employé ne fournit-il pas des efforts suffisants ?",
+        "more": "L'employé.e a besoin d'apprendre, de comprendre et plus de reconnaissance",
+        "less": "Le manager a besoin de confiance dans l'investissement de son employé, tandis que l'employé a besoin de reconnaissance."
     },
     {
         "employe": "Sentez-vous que votre travail est à la hauteur de votre place dans l'équipe ?",
