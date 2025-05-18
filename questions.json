@@ -1,7 +1,9 @@
 [
     {
         "employe": "Vous sentez-vous envahi ?",
-        "manager": "Avez vous l'impression que votre employé ne met pas de barrière entre vous et lui ?"
+        "manager": "Avez vous l'impression que votre employé ne met pas de barrière entre vous et lui ?",
+        "more": "L'employé.e souhaite plus de liberté",
+        "less": "Le manager est plus soucieux d'empiéter sur ses employés."
     },
     {
         "employe": "Vous sentez-vous contraint sur l'organisation de vos horaires ?",

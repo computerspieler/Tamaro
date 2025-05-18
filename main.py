@@ -192,11 +192,11 @@ async def answers(response: Response,
         if not am_i_manager:
             diff *= -1
         if diff > 0:
-            answers.append(questions[i]["more"])
+            answers.append(questions[i].get("more", ""))
         elif diff == 0:
-            answers.append("Vous vous entendez")
+            answers.append("Vous êtes d'accord")
         else:
-            answers.append(questions[i]["less"])
+            answers.append(questions[i].get("less", ""))
     avg_diff /= len(answers_me)
     return (answers, avg_diff)
 
