@@ -59,7 +59,7 @@ async function associateWithUser(user) {
     return [(res.status == 200), (res.status == 404)];
 }
 
-async function moveOn() {
+async function moveOn(them) {
     if(values.length == 0) {
         console.log("No values, but want to move on");
         return;
@@ -82,7 +82,7 @@ async function moveOn() {
         return;
     }
 
-    window.location.replace("/response?id=" + id);
+    window.location.replace("/response?id=" + id + "&role=" + role);
 }
 
 function userNotFound(user) {
@@ -103,7 +103,7 @@ function waitForOtherUser() {
     }).then(async (res_raw) => {
         let res = await res_raw.json();
         if(!res) return;
-        moveOn();
+        moveOn(res);
     })
 }
 

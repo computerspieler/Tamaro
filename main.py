@@ -1,4 +1,3 @@
-from openai import OpenAI
 import os
 from datetime import datetime
 import json
@@ -17,14 +16,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 class Settings(BaseModel):
-    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
     KEY_LENGTH: int = 5
     KEY_CHARACTERS: str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 settings = Settings()
-client = OpenAI(
-  api_key = settings.OPENAI_API_KEY,
-)
 templates = Jinja2Templates(directory="templates")
 
 questions = json.loads(open("./questions.json", "r").read())
@@ -154,6 +149,56 @@ async def question_html(response: Response,
         db.rollback()
     finally:
         return None
+
+@app.get("/answers", response_class=JSONResponse)
+async def answers(response: Response,
+    id: str,
+    db: Session = Depends(get_db)
+):
+    am_i_manager = (db.query(ID).filter((ID.id == id) & (ID.role == 'manager')).count() > 0)
+
+    pair = db.query(Pair).filter((Pair.id1 == id) | (Pair.id2 == id)).first()
+    is_id1 = pair.id1 == id
+    comrade_id = pair.id1 if not is_id1 else pair.id2
+    
+    answers_me = db.query(Answers).filter(Answers.user_id == id).all()
+    answers_them = db.query(Answers).filter(Answers.user_id == comrade_id).all()
+
+    if len(answers_me) != len(answers_them):
+        response.status = response.status = status.HTTP_500_INTERNAL_SERVER_ERROR
+        return
+    
+    answers = []
+    avg_diff = 0
+    for i in range(len(answers_me)):
+        res_me = next(map(
+            lambda x: x.response,
+            filter(
+                lambda x: x.question_id == i,
+                answers_me
+            )
+        ))
+        res_them = next(map(
+            lambda x: x.response,
+            filter(
+                lambda x: x.question_id == i,
+                answers_them
+            )
+        ))
+
+        # diff = res_employe-res_patron
+        diff = res_them-res_me
+        avg_diff += diff
+        if not am_i_manager:
+            diff *= -1
+        if diff > 0:
+            answers.append(questions[i]["more"])
+        elif diff == 0:
+            answers.append("Vous vous entendez")
+        else:
+            answers.append(questions[i]["less"])
+    avg_diff /= len(answers_me)
+    return (answers, avg_diff)
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
