@@ -1,7 +1,7 @@
 [
     {
         "employe": "Vous sentez-vous envahi ?",
-        "manager": "Avez vous l'impression que votre employé met une barrière entre vous et lui ? "
+        "manager": "Avez vous l'impression que votre employé ne met pas de barrière entre vous et lui ?"
     },
     {
         "employe": "Vous sentez-vous contraint sur l'organisation de vos horaires ?",
@@ -9,13 +9,13 @@
     },
     {
         "employe": "Vous sentez-vous ennuyé ?",
-        "manager": "Votre employé fournit-il des efforts suffisants ?"
+        "manager": "Votre employé ne fournit-il pas des efforts suffisants ?"
     },
-     {
+    {
         "employe": "Sentez-vous que votre travail est à la hauteur de votre place dans l'équipe ?",
         "manager": "Sentez-vous en confiance avec votre employé ?"
     },
-     {
+    {
         "employe": "Vous sentez-vous suffisamment intégré au sein de votre équipe ?",
         "manager": "Sentez-vous votre employé comme intégré dans l'équipe ?"
     },
@@ -27,8 +27,8 @@
         "employe": "Vous sentez-vous reconnu ?",
         "manager": "Votre employé se sent-il reconnu ?"
     },
-    {   "employe":"Sentez-vous autonme ?",
-        "manager":"Votre employé se sent-il autonome ?"
+    {
+        "employe": "Sentez-vous autonome ?",
+        "manager": "Pensez-vous que votre employé se sent autonome ?"
     }
-
 ]
