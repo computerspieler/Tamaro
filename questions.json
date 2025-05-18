@@ -1,14 +1,34 @@
 [
     {
-        "employe": "Etes-vous opressé ?",
-        "manager": "Etes-vous d ?"
+        "employe": "Vous sentez-vous envahi ?",
+        "manager": "Avez vous l'impression que votre employé met une barrière entre vous et lui ? "
     },
     {
-        "employe": "Etes-vous dsq ?",
-        "manager": "Etes-vous opressant ?"
+        "employe": "Vous sentez-vous contraint sur l'organisation de vos horaires ?",
+        "manager": "Sentez-vous que les horaires définis sont contraignantes ?"
     },
     {
-        "employe": "Etes-vous ennuyé ?",
-        "manager": "Etes-vous oddpressant ?"
+        "employe": "Vous sentez-vous ennuyé ?",
+        "manager": "Votre employé fournit-il des efforts suffisants ?"
+    },
+     {
+        "employe": "Sentez-vous que votre travail est à la hauteur de votre place dans l'équipe ?",
+        "manager": "Sentez-vous en confiance avec votre employé ?"
+    },
+     {
+        "employe": "Vous sentez-vous suffisamment intégré au sein de votre équipe ?",
+        "manager": "Sentez-vous votre employé comme intégré dans l'équipe ?"
+    },
+    {
+        "employe": "Vous sentez-vous en sécurité ?",
+        "manager": "Votre employé se sent-il en sécurité ?"
+    },
+    {
+        "employe": "Vous sentez-vous reconnu ?",
+        "manager": "Votre employé se sent-il reconnu ?"
+    },
+    {   "employe":"Sentez-vous autonme ?",
+        "manager":"Votre employé se sent-il autonome ?"
     }
+
 ]
