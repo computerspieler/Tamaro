@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+body.vertAlign {
+    height: 100vh;
+}
+
+button.roleButton {
+    width: 30vw;
+    height: 20vh;
+    margin: 10vh;
+}
+
+div.sliderContainer {
+    flex-direction: row;
+    display:flex;
+}
